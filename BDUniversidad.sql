@@ -6,6 +6,22 @@
 use BDUniversidad
 go
 
+-- Eliminar tablas
+
+if OBJECT_ID('TAlumnno') is not null
+	delete from TAlumno
+	drop table TAlumno
+go
+
+
+if OBJECT_ID('TEscuela') is not null
+	delete from TEscuela
+	drop table TEscuela
+go
+
+
+-- Eliminar bd 
+
 if DB_ID('DBUniversidad') is not null
 	drop database BDUniversidad
 go
@@ -15,19 +31,6 @@ go
 
 use BDUniversidad
 go
-
-
--- Eliminar tablas
-
-if OBJECT_ID('TAlumnno') is not null
-	drop table TAlumno
-go
-
-
-if OBJECT_ID('TEscuela') is not null
-	drop table TEscuela
-go
-
 
 
 -- Crear tablas
@@ -70,7 +73,5 @@ insert into TAlumno values('A04','Coajiras','Guesto','Trujillo','06/02/2022','E0
 go
 
 select * from TEscuela
-go
-
 select * from TAlumno
 go
